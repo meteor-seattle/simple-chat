@@ -1,0 +1,32 @@
+<head>
+  <title>Awesome Meteor Chat!</title>
+</head>
+
+<body>
+  {{> clearMessages}}
+  {{> chatMessages}}
+  {{> messageBox}}
+</body>
+
+<template name='clearMessages'>
+  <div>
+    <button id='clearAllMessages'>Clear</button>
+  </div>
+</template>
+
+<template name='chatMessages'>
+  <div style="height:300px;width:100%;overflow-y:scroll;">
+    {{#each allMessages}}
+    <div style="width:100%;height:20px;">
+      {{message}} <span class='delMsg'>(x)</span>
+    </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name='messageBox'>
+  <div style="width:100%;height:100px;">
+    <textarea style="width:100%;height:100%" id='myMessage'></textarea>
+    <button id='sendMessage'>Send</button>
+  </div>
+</template>
